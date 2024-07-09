@@ -1,0 +1,238 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
+
+:root {
+/* Colors */
+
+--Very-Dark-Grayish-Blue: hsl(217, 19%, 35%);
+--Desaturated-Dark-Blue: hsl(214, 17%, 51%);
+--Grayish-Blue: hsl(212, 23%, 69%);
+--Light-Grayish-Blue: hsl(210, 46%, 95%);
+
+
+
+/* Body Copy */
+--font: 'Manrope', sans-serif;
+--body: 0.8125rem;
+}
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: var(--font);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* overflow: hidden; */
+}
+
+
+h3 {
+    font-size: 1rem;
+    color: var(--Very-Dark-Grayish-Blue);
+    font-weight: 700;
+}
+
+h4 {
+    font-size: var(--body);
+    color: var(--Very-Dark-Grayish-Blue);
+}
+
+p{
+    font-size: .75rem;
+    color: var(--Desaturated-Dark-Blue);
+}
+
+img {
+    max-width: 100%;
+}
+
+.bg {
+    /* border: 2px solid orange; */
+    padding: 2rem;
+}
+
+
+.card__img {
+    grid-area: card__img;
+}
+
+.card__text {
+    grid-area: card__text;
+    /* border: 2px solid red; */
+    padding: 1rem;
+}
+
+.card__user {
+    grid-area: card__user;
+}
+
+.card {
+    background: White;
+    width: 100%;
+    max-width: 600px;
+    display: grid;
+    grid-template-areas: 
+    'card__img'
+    'card__text'
+    'card__user';
+    grid-gap: 1rem;
+    border-radius: 2%;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card__text h3 {
+    padding-bottom: .5rem;
+}
+
+
+footer{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding-block-end: 1rem;
+    position: relative;
+
+}
+
+.info-container {
+    display: flex;
+    align-items: center;
+    /* border: 2px solid olive; */
+    gap: 1rem;
+    padding: .5rem;
+}
+.profile{
+    order: -1;
+    border-radius: 50%;
+    width: 50px;
+}
+
+footer button{
+    border-radius: 50%;
+}
+
+
+footer button[aria-expanded]{
+    width: 2.5rem;
+    aspect-ratio: 1;
+    place-self: center;
+    border-color: transparent;
+    background-color: var(--Light-Grayish-Blue);
+    color: var(--Grayish-Blue);
+    z-index: 10;
+}
+
+footer button[aria-expanded="true"]{
+    background-color: var(--Grayish-Blue);
+    color: var(--Light-Grayish-Blue);
+}
+
+.share-container{
+    display: contents;
+    position: relative;
+}
+
+.share-links{
+    position: absolute;
+    bottom: 0;
+    background-color: var(--Very-Dark-Grayish-Blue);
+    width: 100%;
+    display: flex;
+    min-height: 5rem;
+    padding-block: 1rem;
+    color: var(--grayish-blue);
+    padding-inline-start: 2rem;
+    align-items: center;
+    gap: 2rem;
+    /* border: 2px solid orangered; */
+}
+
+.share-links nav{
+    display: flex;
+    gap: 1em;
+    flex-wrap: wrap;
+    /* border: 2px solid red; */
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.share-links-hidden > :not(button), .share-links-hidden.share-container::after{
+    display: none;
+}
+
+.info-container{
+    display: flex;
+    /* border: 2px solid orangered; */
+
+}
+
+@media screen and (min-width: 625px) {
+    .card{
+        display: grid;
+        /* max-height: 280px; */
+        grid-template-areas: "card__img card__text"
+                             "card__img card__user";
+        grid-template-columns: 2fr 3fr;
+    }
+
+    .card__img{
+        min-height: 100%;
+        object-fit: cover;
+    }
+
+    .share-links{
+        right: 0;
+        padding: 2rem;
+        /* min-height: 7rem; */
+    }
+}
+
+
+@media screen and (min-width: 960px) {
+    .card{
+        position: initial;
+    }
+
+    .share-container{
+        --width: 22.5ch;
+        --margin: 2rem;
+        --button-width: 2.5rem;
+    }
+
+    .share-links{
+        max-width: var(--width);
+        padding: .5rem;
+        min-height: fit-content;
+        bottom: 120%;
+        right: calc(var(--margin) + var(--button-width) - (var(--width) / 2));
+        padding: 1rem;
+        border-radius: 1rem;
+    }
+
+    .share-container::after{
+        --button-width: 1rem;
+        border: var(--button-width) solid transparent;
+        border-top-color: var(--Very-Dark-Grayish-Blue);
+        content: '';
+        position: absolute;
+        right: calc(var(--margin) + var(--button-width) );
+        top: -1.2rem; 
+    }
+
+    .card{
+        overflow: visible;
+    }
+
+    .card__img{
+        border-top-left-radius: 1rem;
+        border-bottom-left-radius: 1rem;
+    }
+}

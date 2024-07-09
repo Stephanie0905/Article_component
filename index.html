@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Article preview component</title>
+  <link rel="stylesheet" href="style.css">
+  
+</head>
+<body>
+
+  <main class="bg">
+   <article class="card">
+      <img src="./images/drawers.jpg" alt="" class="card__img">
+      <div class="card__text">
+        <h3>Shift the overall look and feel by adding these wonderful 
+          touches to furniture in your home</h3>
+        <p>Ever been in a room and felt like something was missing? Perhaps 
+          it felt slightly bare and uninviting. I’ve got some simple tips 
+          to help you make any room feel complete.</p>
+      </div>
+
+      <footer class="card__user">
+        <div class="info-container">
+          <div class="author">
+            <h4>Michelle Appleton</h4>
+            <p>28 Jun 2020</p>
+          </div>
+          <img class="profile" src="./images/avatar-michelle.jpg" alt="smiling picture of Michelle">
+        </div>
+        <div class="share-container share-links-hidden">
+          <button id="js-share-button" aria-expanded="false" aria-controls="social">
+            <img src="./images/icon-share.svg" alt="share">
+          </button>
+          <div class="share-links" id="social">
+            <p id="share-label">SHARE</p>
+            <nav aria-labelledby="share-label" class="">
+              <a href="https://www.facebook.com">
+                <img src="./images/icon-facebook.svg" alt="facebook">
+              </a>
+              <a href="https://www.twitter.com">
+                <img src="./images/icon-twitter.svg" alt="twitter">
+              </a>
+              <a href="https://pinterest.com">
+                <img src="./images/icon-pinterest.svg" alt="pinterest">
+              </a>
+            </nav>
+          </div>
+        </div>
+    </footer>
+   </article>
+  </main>
+
+  <!-- Shift the overall look and feel by adding these wonderful 
+  touches to furniture in your home
+
+  Ever been in a room and felt like something was missing? Perhaps 
+  it felt slightly bare and uninviting. I’ve got some simple tips 
+  to help you make any room feel complete.
+
+  Michelle Appleton
+  28 Jun 2020
+
+  Share -->
+  
+  <!-- <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Your Name Here</a>.
+  </div> -->
+
+  <script src="main.js"></script>
+</body>
+</html>
